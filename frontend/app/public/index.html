@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../public/css/index.css" />
+  </head>
+  <body>
+    <main class="bg-dark">
+      <div class="container product-managerment bg-base">
+        <h2 class="title-cyber">
+          <span class="cyber--title">Cyber</span
+          ><span class="product--title">Product</span>
+        </h2>
+        <div class="product-management__content">
+          <div class="mb-4 text-right">
+            <button
+              id="btnPopupModelAdd"
+              class="btn btn-lg btn-outline-warning"
+              data-toggle="modal"
+              data-target="#productModal"
+            >
+              Thêm sản phẩm
+            </button>
+            <!-- Model -->
+            <div
+              class="model fade"
+              id="productModel"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="productModelLabel"
+              aria-hidden="true"
+            >
+              <div class="model-dialog" role="document">
+                <div class="model-content">
+                  <div class="model-header">
+                    <h5 id="title-model exampleModeLabel" class="model-title">
+                      Thêm Học Sinh
+                    </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="model"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="model-body">
+                    <form>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span
+                            class="input-group-text min-width"
+                            id="product_name"
+                            >Tên sản phẩm</span
+                          >
+                        </div>
+                        <input
+                          id="name"
+                          type="text"
+                          class="form-control"
+                          placeholder="Tên sản phẩm ..."
+                          aria-label="TenSanPham"
+                          aria-describedby="tenSanPham"
+                        />
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text min-width" id="amount"
+                            >amount</span
+                          >
+                        </div>
+                        <input
+                          id="amount"
+                          type="text"
+                          class="form-control"
+                          placeholder="Amount ... "
+                          aria-label="Amount"
+                          aria-describedby="amount"
+                        />
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text min-width" id="price"
+                            >price</span
+                          >
+                        </div>
+                        <input
+                          id="price"
+                          type="text"
+                          class="form-control"
+                          placeholder="Price ... "
+                          aria-label="Price"
+                          aria-describedby="price"
+                        />
+                      </div>
+                      <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text min-width" for="sale"
+                            >sale</label
+                          >
+                        </div>
+                        <select id="sale" class="custom-select" id="giam gia">
+                          <option selected>Sale ...</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                        </select>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="model-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="model"
+                    >
+                      Đóng
+                    </button>
+                    <button
+                      id="addProduct"
+                      type="button"
+                      class="btn btn-outline-warning"
+                    >
+                      Thêm
+                    </button>
+                    <button
+                      id="updateProduct"
+                      type="button"
+                      class="btn btn-outline-warning"
+                    >
+                      Cập Nhật
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-list">
+            <table class="table">
+              <thead class="color__white header__size">
+                <tr>
+                  <th scope="col">id</th>
+                  <th scope="col">name</th>
+                  <th scope="col">amount</th>
+                  <th scope="col">price</th>
+                  <th scope="col">sale</th>
+                  <th scope="col">xử lý</th>
+                </tr>
+              </thead>
+              <tbody id="tbody" class="color__white body__size"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Model Messages -->
+    <div
+      class="model fade"
+      id="modelMessage"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalMessageLabel"
+      aria-hidden="true"
+    >
+      <div class="model-dialog" role="document">
+        <p class="alert alert-primary" id="message-content">
+          Thành Công
+          <button
+            type="button"
+            class="close"
+            data-dismiss="model"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </p>
+      </div>
+    </div>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../node_modules/axios/dist/axios.min.js"></script>
+    <script src="../src/index.js" type="module"></script>
+  </body>
+</html>
