@@ -13,7 +13,7 @@
   </head>
   <body>
     <main class="bg-dark">
-      <div class="container product-managerment bg-base">
+      <div class="container product-management bg-base">
         <h2 class="title-cyber">
           <span class="cyber--title">Cyber</span
           ><span class="product--title">Product</span>
@@ -21,38 +21,38 @@
         <div class="product-management__content">
           <div class="mb-4 text-right">
             <button
-              id="btnPopupModelAdd"
+              id="btnPopupModalAdd"
               class="btn btn-lg btn-outline-warning"
               data-toggle="modal"
               data-target="#productModal"
             >
               Thêm sản phẩm
             </button>
-            <!-- Model -->
+            <!-- Modal -->
             <div
-              class="model fade"
-              id="productModel"
+              class="modal fade"
+              id="productModal"
               tabindex="-1"
               role="dialog"
-              aria-labelledby="productModelLabel"
+              aria-labelledby="productModalLabel"
               aria-hidden="true"
             >
-              <div class="model-dialog" role="document">
-                <div class="model-content">
-                  <div class="model-header">
-                    <h5 id="title-model exampleModeLabel" class="model-title">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 id="title-modal exampleModaLabel" class="modal-title">
                       Thêm Học Sinh
                     </h5>
                     <button
                       type="button"
                       class="close"
-                      data-dismiss="model"
+                      data-dismiss="modal"
                       aria-label="Close"
                     >
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <div class="model-body">
+                  <div class="modal-body">
                     <form>
                       <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -115,11 +115,11 @@
                       </div>
                     </form>
                   </div>
-                  <div class="model-footer">
+                  <div class="modal-footer">
                     <button
                       type="button"
                       class="btn btn-secondary"
-                      data-dismiss="model"
+                      data-dismiss="modal"
                     >
                       Đóng
                     </button>
@@ -161,22 +161,22 @@
       </div>
     </main>
 
-    <!-- Model Messages -->
+    <!-- Modal Messages -->
     <div
-      class="model fade"
-      id="modelMessage"
+      class="modal fade"
+      id="modalMessage"
       tabindex="-1"
       role="dialog"
       aria-labelledby="modalMessageLabel"
       aria-hidden="true"
     >
-      <div class="model-dialog" role="document">
+      <div class="modal-dialog" role="document">
         <p class="alert alert-primary" id="message-content">
           Thành Công
           <button
             type="button"
             class="close"
-            data-dismiss="model"
+            data-dismiss="modal"
             aria-label="Close"
           >
             <span aria-hidden="true">&times;</span>

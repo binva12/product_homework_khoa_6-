@@ -18,7 +18,7 @@ const getProductDetail = async (id) => {
 const createProduct = async (student) => {
   const res = await axios({
     method: "POST",
-    url: `http://localhost:7000/students`,
+    url: `http://localhost:7000/products`,
     data: student,
   });
   return res.data;

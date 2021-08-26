@@ -29,8 +29,8 @@ const renderProductList = async () => {
       <button
         type="button"
         class="btn btn-outline-info"
-        data-toggle="model"
-        data-target="#productModel"
+        data-toggle="modal"
+        data-target="#productModal"
         onclick="handleEdit('${item.id}')"
       >
         Sửa
@@ -44,7 +44,7 @@ const renderProductList = async () => {
 renderProductList();
 
 const handleEdit = async (id) => {
-  document.getElementById("title-model").innerHTML = "Sửa sản phẩm";
+  document.getElementById("title-modal").innerHTML = "Sửa sản phẩm";
   document.getElementById("addProduct").style["display"] = "none";
   document.getElementById("updateProduct").style["display"] = "block";
   const product = await getProductDetail(id);
@@ -55,8 +55,8 @@ const handleEdit = async (id) => {
   store.productDetail = product;
 };
 window.handleEdit = handleEdit;
-document.getElementById("btnPopupModelAdd").addEventListener("click", () => {
-  document.getElementById("title-model").innerHTML = "Thêm Sản Phẩm";
+document.getElementById("btnPopupModalAdd").addEventListener("click", () => {
+  document.getElementById("title-modal").innerHTML = "Thêm Sản Phẩm";
   document.getElementById("addProduct").style["display"] = "block";
   document.getElementById("updateProduct").style["display"] = "none";
   document.getElementById("name").value = "";
@@ -73,8 +73,8 @@ document.getElementById("addProduct").addEventListener("click", async () => {
   const product = { name, amount, price, sale };
   await createProduct(product);
   await renderProductList();
-  $("#modelMessage").modal("show");
-  $("#productModel").modal("hide");
+  $("#modalMessage").modal("show");
+  $("#productModal").modal("hide");
 });
 
 document.getElementById("updateProduct").addEventListener("click", async () => {
@@ -88,13 +88,13 @@ document.getElementById("updateProduct").addEventListener("click", async () => {
   await updateProduct(id, product);
 
   await renderProductList();
-  $("#modelMessage").modal("show");
-  $("#productModel").modal("hide");
+  $("#modalMessage").modal("show");
+  e("#productModal").modal("hide");
 });
 
 const handleDelete = async (id) => {
   await deleteProduct(id);
   await renderProductList();
-  $("#modelMessage").modal("show");
+  $("#modalMessage").modal("show");
 };
 window.handleDelete = handleDelete;
